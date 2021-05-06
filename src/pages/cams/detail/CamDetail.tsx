@@ -9,6 +9,7 @@ import {
 } from '@material-ui/core'
 import MuiAlert from '@material-ui/lab/Alert'
 import Plot from 'react-plotly.js'
+import Frame from 'react-frame-component'
 
 import LoadingOverlay from 'components/LoadingOverlay'
 import Snackbar from 'components/SnackbarAlert'
@@ -73,24 +74,6 @@ const CamDetail: React.FC = () => {
               alt="No hay transmisión disponible"
               src={camStore.instance.image_stream}
             />
-          <Grid container spacing={1}>
-              <Grid item md={4}>
-                <Typography align='center'>
-                  Cantidad de personas:
-                  <Typography align='center' variant='h4' component='h4' gutterBottom>
-                    {camStore.instance.records?.map(({amount_people}) => amount_people)[0]}
-                  </Typography>
-                </Typography>
-              </Grid>
-              <Grid item md={8}>
-                <Typography align='center'>
-                  Cantidad de personas incumpliendo distanciamiento:
-                  <Typography align='center' variant='h4' component='h4' gutterBottom>
-                    {camStore.instance.records?.map(({breaking_secure_distance}) => breaking_secure_distance)[0]}
-                  </Typography>
-                </Typography>
-              </Grid>
-            </Grid> 
           </Grid>
           <Box>
             <Plot

@@ -37,4 +37,6 @@ export interface CamChannel {
   records?: CamRecord[];
   // alarms?: CamAlarm[];
   last_record?: CamRecord;
+  // amount_people: string;
+  // breaking_secure_distance: string;
 }
